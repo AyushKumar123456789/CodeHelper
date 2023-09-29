@@ -1,8 +1,13 @@
 <% layout('layouts/boilerplate') %>
     <div class="row">
         <div class="col-8 offset-2 " style="font-family: consolas;">
+            <div class="input-group">
+                <input type="search" id="search-input" class="form-control rounded" placeholder="Type to Search" aria-label="Search" aria-describedby="search-addon" />
+                <button type="button" class="btn btn-outline-primary" id="search-btn">search</button>
+              </div>
+              <br><br>
             <h2 class="text-white" >Some Important Topics To Learn</h2>
-            <div class="card mb-3 ">
+            <!-- <div class="card mb-3 ">
                 <div class="card-body">
                     <a href="https://www.geeksforgeeks.org/binary-search/" class="card-text btn " id="materiallist" style="font-size: 18px;" >Binary Search</a>
                 </div>
@@ -21,7 +26,8 @@
                 <div class="card-body">
                     <a href="https://www.geeksforgeeks.org/dynamic-programming/" class="card-text btn " id="materiallist" style="font-size: 18px;" >Dynamic Programming</a>
                 </div>
-            </div>
+            </div> -->
+            <div id="ayush">
             <% allmaterial.forEach(function(material){ %>
                 <div class="card mb-3 ">
                     <div class="card-body">
@@ -29,7 +35,7 @@
                     </div>
                 </div>
 
-            <% }); %>
+            <% }); %></div>
             <div class="container">
                 <h3 style="text-align: center; color:  white;">Didn't find the topic you are looking for?<br> Feel free to tell us your suggestions!</h3>
                 <p style="text-align: center;">
@@ -41,4 +47,9 @@
             </div>
         </div>
     </div>
-   
+   <script>
+    const campground='<%- JSON.stringify(allmaterial) %>';
+    const cp= JSON.parse(campground);
+</script>
+<script src="/javascript/search.js">
+    </script>
